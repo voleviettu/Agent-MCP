@@ -1,0 +1,21 @@
+{
+  "name": "mcp-homework",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "agent": "node src/agent/cli.js",
+    "server:stdio": "node src/servers/stdio.js",
+    "server:http": "node src/servers/http.js",
+    "test": "node --test",
+    "check": "node --check src/agent/cli.js && node --check src/servers/stdio.js && node --check src/servers/http.js && node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.25.3",
+    "express": "^5.1.0",
+    "zod": "^3.25.76"
+  }
+}

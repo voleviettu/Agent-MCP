@@ -1,0 +1,25 @@
+{
+  "model": {
+    "name": "qwen3:4b",
+    "baseUrl": "http://127.0.0.1:11434/v1"
+  },
+  "mcpServers": {
+    "todo_stdio": {
+      "transport": "stdio",
+      "command": "node",
+      "args": ["src/servers/stdio.js"],
+      "env": {
+        "TODO_FILE": "data/todos-stdio.json"
+      }
+    },
+    "todo_http": {
+      "transport": "http",
+      "url": "http://127.0.0.1:3000/mcp",
+      "headers": {
+        "Authorization": "Bearer ${MCP_KEY}"
+      }
+    }
+  },
+  "skillDirs": ["skills"]
+}
+
