@@ -6,10 +6,10 @@ function unauthorized(res) {
   return res.status(401).set("WWW-Authenticate", "Bearer").json({ error: "unauthorized" });
 }
 
-export function createHttpApp({ key, filePath = "data/todos-http.json" }) {
+export function createHttpApp({ key, host = "127.0.0.1", filePath = "data/todos-http.json" }) {  
+  
   if (!key) throw new Error("MCP_KEY is required");
-
-  const app = createMcpExpressApp();
+  const app = createMcpExpressApp({ host });
 
   app.get("/health", (_req, res) => res.json({ status: "ok" }));
 
