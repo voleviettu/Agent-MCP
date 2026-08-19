@@ -109,7 +109,7 @@ test/                       unit and protocol integration tests
 
 ## Demo and submission checklist
 
-For a short YouTube demo:
+YouTube video demo:
 
 1. Show `npm test` passing.
 2. Show the stdio server in Inspector: tools, resource, and prompt.
